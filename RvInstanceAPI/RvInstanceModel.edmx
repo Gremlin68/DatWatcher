@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="RvInstanceModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="RvInstance">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RvLocation" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="DatDescriptionID" Type="int" />
+          <Property Name="Version" Type="varchar" MaxLength="50" />
+          <Property Name="ConfigLastUpdated" Type="datetime2" Precision="7" />
+          <Property Name="DatRootLocation" Type="varchar" MaxLength="250" />
+          <Property Name="DatRootLastUpdated" Type="datetime2" Precision="7" />
+          <Property Name="CacheFileLocation" Type="varchar" MaxLength="250" />
+          <Property Name="CacheFileLastUpdated" Type="datetime2" Precision="7" />
+          <Property Name="ReportLastUpdated" Type="datetime2" Precision="7" />
+          <Property Name="ScanLevel" Type="varchar" MaxLength="50" />
+          <Property Name="FixLevel" Type="varchar" MaxLength="50" />
+          <Property Name="CopyFixDats" Type="bit" Nullable="false" />
+          <Property Name="CollectStats" Type="bit" Nullable="false" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+          <Property Name="DatCategoryId" Type="int" />
+          <Property Name="DatWatch" Type="bit" />
+        </EntityType>
+        <EntityContainer Name="RvInstanceModelStoreContainer">
+          <EntitySet Name="RvInstance" EntityType="Self.RvInstance" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="RvInstanceModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="RvInstance">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RvLocation" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DatDescriptionID" Type="Int32" />
+          <Property Name="Version" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ConfigLastUpdated" Type="DateTime" Precision="7" />
+          <Property Name="DatRootLocation" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="DatRootLastUpdated" Type="DateTime" Precision="7" />
+          <Property Name="CacheFileLocation" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="CacheFileLastUpdated" Type="DateTime" Precision="7" />
+          <Property Name="ReportLastUpdated" Type="DateTime" Precision="7" />
+          <Property Name="ScanLevel" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FixLevel" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CopyFixDats" Type="Boolean" Nullable="false" />
+          <Property Name="CollectStats" Type="Boolean" Nullable="false" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <Property Name="DatCategoryId" Type="Int32" />
+          <Property Name="DatWatch" Type="Boolean" />
+        </EntityType>
+        <EntityContainer Name="RvInstanceEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="RvInstances" EntityType="Self.RvInstance" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="RvInstanceModelStoreContainer" CdmEntityContainer="RvInstanceEntities">
+          <EntitySetMapping Name="RvInstances">
+            <EntityTypeMapping TypeName="RvInstanceModel.RvInstance">
+              <MappingFragment StoreEntitySet="RvInstance">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="RvLocation" ColumnName="RvLocation" />
+                <ScalarProperty Name="DatDescriptionID" ColumnName="DatDescriptionID" />
+                <ScalarProperty Name="Version" ColumnName="Version" />
+                <ScalarProperty Name="ConfigLastUpdated" ColumnName="ConfigLastUpdated" />
+                <ScalarProperty Name="DatRootLocation" ColumnName="DatRootLocation" />
+                <ScalarProperty Name="DatRootLastUpdated" ColumnName="DatRootLastUpdated" />
+                <ScalarProperty Name="CacheFileLocation" ColumnName="CacheFileLocation" />
+                <ScalarProperty Name="CacheFileLastUpdated" ColumnName="CacheFileLastUpdated" />
+                <ScalarProperty Name="ReportLastUpdated" ColumnName="ReportLastUpdated" />
+                <ScalarProperty Name="ScanLevel" ColumnName="ScanLevel" />
+                <ScalarProperty Name="FixLevel" ColumnName="FixLevel" />
+                <ScalarProperty Name="CopyFixDats" ColumnName="CopyFixDats" />
+                <ScalarProperty Name="CollectStats" ColumnName="CollectStats" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="DatCategoryId" ColumnName="DatCategoryId" />
+                <ScalarProperty Name="DatWatch" ColumnName="DatWatch" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

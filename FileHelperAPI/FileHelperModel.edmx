@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="FileHelperModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="DatFileDetail">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DatName" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="LocationId" Type="int" Nullable="false" />
+          <Property Name="FullFilePath" Type="varchar(max)" />
+          <Property Name="Size" Type="bigint" />
+          <Property Name="MD5Hash" Type="varchar" MaxLength="150" />
+          <Property Name="CRC32" Type="varchar" MaxLength="150" />
+          <Property Name="SHA256" Type="varchar" MaxLength="150" />
+          <Property Name="LastAccessTime" Type="datetime" />
+          <Property Name="CreationTime" Type="datetime" />
+          <Property Name="LastWriteTime" Type="datetime" />
+          <Property Name="Available" Type="bit" Nullable="false" />
+          <Property Name="LastCheckedTime" Type="datetime" />
+        </EntityType>
+        <EntityContainer Name="FileHelperModelStoreContainer">
+          <EntitySet Name="DatFileDetail" EntityType="Self.DatFileDetail" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="FileHelperModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="DatFileDetail">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DatName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LocationId" Type="Int32" Nullable="false" />
+          <Property Name="FullFilePath" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Size" Type="Int64" />
+          <Property Name="MD5Hash" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="CRC32" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="SHA256" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="LastAccessTime" Type="DateTime" Precision="3" />
+          <Property Name="CreationTime" Type="DateTime" Precision="3" />
+          <Property Name="LastWriteTime" Type="DateTime" Precision="3" />
+          <Property Name="Available" Type="Boolean" Nullable="false" />
+          <Property Name="LastCheckedTime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityContainer Name="FileHelperEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="DatFileDetails" EntityType="Self.DatFileDetail" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="FileHelperModelStoreContainer" CdmEntityContainer="FileHelperEntities">
+          <EntitySetMapping Name="DatFileDetails">
+            <EntityTypeMapping TypeName="FileHelperModel.DatFileDetail">
+              <MappingFragment StoreEntitySet="DatFileDetail">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="DatName" ColumnName="DatName" />
+                <ScalarProperty Name="LocationId" ColumnName="LocationId" />
+                <ScalarProperty Name="FullFilePath" ColumnName="FullFilePath" />
+                <ScalarProperty Name="Size" ColumnName="Size" />
+                <ScalarProperty Name="MD5Hash" ColumnName="MD5Hash" />
+                <ScalarProperty Name="CRC32" ColumnName="CRC32" />
+                <ScalarProperty Name="SHA256" ColumnName="SHA256" />
+                <ScalarProperty Name="LastAccessTime" ColumnName="LastAccessTime" />
+                <ScalarProperty Name="CreationTime" ColumnName="CreationTime" />
+                <ScalarProperty Name="LastWriteTime" ColumnName="LastWriteTime" />
+                <ScalarProperty Name="Available" ColumnName="Available" />
+                <ScalarProperty Name="LastCheckedTime" ColumnName="LastCheckedTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
