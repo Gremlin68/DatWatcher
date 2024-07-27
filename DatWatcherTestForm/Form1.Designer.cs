@@ -33,7 +33,7 @@
             this.btnGetExtendedFileInfo = new System.Windows.Forms.Button();
             this.txtFilePath = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnFolderExtendedFileInfo = new System.Windows.Forms.Button();
+            this.btnProcessFile = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnGetFoldersToMonitor
@@ -48,7 +48,6 @@
             // 
             // btnStartMonitor
             // 
-            this.btnStartMonitor.Enabled = false;
             this.btnStartMonitor.Location = new System.Drawing.Point(12, 387);
             this.btnStartMonitor.Name = "btnStartMonitor";
             this.btnStartMonitor.Size = new System.Drawing.Size(134, 51);
@@ -83,22 +82,22 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "FilePath (Temporary)";
             // 
-            // btnFolderExtendedFileInfo
+            // btnProcessFile
             // 
-            this.btnFolderExtendedFileInfo.Location = new System.Drawing.Point(12, 126);
-            this.btnFolderExtendedFileInfo.Name = "btnFolderExtendedFileInfo";
-            this.btnFolderExtendedFileInfo.Size = new System.Drawing.Size(134, 51);
-            this.btnFolderExtendedFileInfo.TabIndex = 5;
-            this.btnFolderExtendedFileInfo.Text = "Get FolderExtendedFileInfo";
-            this.btnFolderExtendedFileInfo.UseVisualStyleBackColor = true;
-            this.btnFolderExtendedFileInfo.Click += new System.EventHandler(this.btnFolderExtendedFileInfo_Click);
+            this.btnProcessFile.Location = new System.Drawing.Point(12, 126);
+            this.btnProcessFile.Name = "btnProcessFile";
+            this.btnProcessFile.Size = new System.Drawing.Size(134, 51);
+            this.btnProcessFile.TabIndex = 5;
+            this.btnProcessFile.Text = "Process File";
+            this.btnProcessFile.UseVisualStyleBackColor = true;
+            this.btnProcessFile.Click += new System.EventHandler(this.btnProcessFile_Click);
             // 
             // btnGetFolderExtendedFileInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnFolderExtendedFileInfo);
+            this.Controls.Add(this.btnProcessFile);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtFilePath);
             this.Controls.Add(this.btnGetExtendedFileInfo);
@@ -118,7 +117,7 @@
         private System.Windows.Forms.Button btnGetExtendedFileInfo;
         private System.Windows.Forms.TextBox txtFilePath;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnFolderExtendedFileInfo;
+        private System.Windows.Forms.Button btnProcessFile;
     }
 }
 

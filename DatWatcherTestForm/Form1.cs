@@ -30,6 +30,9 @@ namespace DatWatcherTestForm
 
         private void btnStartMonitor_Click(object sender, EventArgs e)
         {
+            DatWatcherCore dw = new DatWatcherCore();
+
+            dw.StartDatWatcher();
 
 
             // Get Folders to Monitor
@@ -44,7 +47,7 @@ namespace DatWatcherTestForm
             // Events - File Watcher
 
             //Get FileInfo
-            //Compare Aginst Stored
+            //Compare Against Stored
             //Revoke
             //Add New
 
@@ -66,7 +69,20 @@ namespace DatWatcherTestForm
         {
             var a = @"Q:\DATFiles\Master\ADVANsCEne\";
             DatWatcherCore dw = new DatWatcherCore();
-            var result = dw.GetFolderFileExtendedInfo(a);
+            //var result = dw.GetFolderFileExtendedInfo(a);
+        }
+
+        private void btnProcessFile_Click(object sender, EventArgs e)
+        {
+            var a = @"Q:\DATFiles\Master\ADVANsCEne\ADVANsCEne_NDS_Release_Dat_7256.dat";
+
+            DatWatcherCore dw = new DatWatcherCore();
+            var result = dw.ProcessFile(a);
+
+            //Get FileInfo
+            //Compare Against Stored
+            //Revoke
+            //Add New
         }
     }
 }

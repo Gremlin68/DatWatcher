@@ -55,6 +55,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DatFileDetailAPI\DatFileDetailAPI.csproj">
+      <Project>{f525e54c-62b2-45f0-b98d-5505f27661e1}</Project>
+      <Name>DatFileDetailAPI</Name>
+    </ProjectReference>
     <ProjectReference Include="..\FileHelperAPI\FileHelperAPI.csproj">
       <Project>{BCB1FC38-56A3-4C20-B73E-5D3E60F43F65}</Project>
       <Name>FileHelperAPI</Name>
